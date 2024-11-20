@@ -49,12 +49,48 @@
 
     1) Pre-trained models:
 
+        <pre>
+        tn: 375
+        fp: 0
+        fn: 0
+        tp: 100
+        precision: 1.0
+        recall: 1.0
+        fscore: 1.0
+        accuracy: 1.0
+        auc_val: 1.0
+        </pre>
+
     2) My trained models:
+
+        <pre>
+        tn: 375
+        fp: 0
+        fn: 0
+        tp: 100
+        precision: 1.0
+        recall: 1.0
+        fscore: 1.0
+        accuracy: 1.0
+        auc_val: 1.0
+        </pre>
 
 
 2) E3-THEIA:
 
     1) Pre-trained models:
+
+        <pre>
+        tn: 215
+        fp: 3
+        fn: 1
+        tp: 8
+        precision: 0.7272727272727273
+        recall: 0.8888888888888888
+        fscore: 0.7999999999999999
+        accuracy: 0.9823788546255506
+        auc_val: 0.9375637104994903
+        </pre>
 
     2) My trained models:
 
@@ -160,7 +196,7 @@
 
         2) While running the test code, it gives the following error:
 
-            ![](./assets/theia_e5_test_error.png)
+            ![](./assets/theia_e5_trained_scratch_test_error.png)
 
 
 6) E5-CADETS:
@@ -169,15 +205,19 @@
 
     2) My trained models:
 
+        ![](./assets/cadets_e5_trained_scratch_test_error.png)
+
 
 
 7) E5-ClearScope:
 
     1) Pre-trained models:
 
+        ![](./assets/results_clearscope_e5_pretrained.png)
+
     2) My trained models:
 
-        ![](./assets/clearscope_e5_evaluate_error.png)
+        ![](./assets/results_clearscope_e5_trained_scratch.png)
 
 8) OpTC:
 
