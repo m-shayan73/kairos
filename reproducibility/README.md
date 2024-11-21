@@ -18,9 +18,11 @@
 
     1) local paths for installations.
     2) invalid library version syntax for pyg-lib, torch-cluster, torch-scatter, torch-sparse, torch-spline-conv.
-    3) missing matplotlib dependency.
+    3) missing matplotlib (used in graph_learning files) and rich (used in optc_datapreprocess.ipynb) dependency.
 
     ![](./assets/requirements.png)
+
+    1) Created a GitHub issue (21st Nov 13:00): [Link](https://github.com/ProvenanceAnalytics/kairos/issues/15)
 
 6) Wherever possible I have used the libaries mentioned in the [requirements.txt](https://github.com/m-shayan73/kairos/blob/reproduce/DARPA/settings/requirements.txt). For the versions of all the libraries, I have used in the reproduction environments, please refer to [libraries.txt](./libraries.txt).
 
@@ -148,7 +150,6 @@
         </pre>
 
 
-
 4) E3-ClearScope:
 
     1) Pre-trained models:
@@ -166,6 +167,8 @@
         </pre>
 
     2) My trained models:
+
+        Results do match with the those mentioned in the paper / those I obtain from pre-trained models - my trained model predicts everything as negative.
 
         <pre>
         tn: 114
@@ -194,9 +197,15 @@
 
             ![](./assets/theia_e5_test_model_load_error.png)
 
-        2) While running the test code, it gives the following error:
+            Change the path accordingly.
+
+        2) While running the test code, it gives the following error - some graph files (generated during the testing phase) seem to be missing:
 
             ![](./assets/theia_e5_trained_scratch_test_error.png)
+
+            The files missing in the pred_label dictionary are all those that are (manually) included in attack_list.
+
+            ![](./assets/theia_e5_missing_files.png)
 
 
 6) E5-CADETS:
@@ -205,8 +214,13 @@
 
     2) My trained models:
 
+        While running the test code, it gives the following error - some graph files (generated during the testing phase) seem to be missing:
+
         ![](./assets/cadets_e5_trained_scratch_test_error.png)
 
+        The files missing in the pred_label dictionary are all those that are (manually) included in attack_list.
+
+        ![](./assets/cadets_e5_missing_files.png)
 
 
 7) E5-ClearScope:
@@ -218,6 +232,7 @@
     2) My trained models:
 
         ![](./assets/results_clearscope_e5_trained_scratch.png)
+
 
 8) OpTC:
 
