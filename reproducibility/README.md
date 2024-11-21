@@ -22,9 +22,9 @@
 
     ![](./assets/requirements.png)
 
-    1) Created a GitHub issue (21st Nov 13:00): [Link](https://github.com/ProvenanceAnalytics/kairos/issues/15)
+    4) Created a GitHub issue (21st Nov 2024, 13:00): [Link](https://github.com/ProvenanceAnalytics/kairos/issues/15)
 
-6) Wherever possible I have used the libaries mentioned in the [requirements.txt](https://github.com/m-shayan73/kairos/blob/reproduce/DARPA/settings/requirements.txt). For the versions of all the libraries, I have used in the reproduction environments, please refer to [libraries.txt](./libraries.txt).
+6) Wherever possible I have used the libaries mentioned in the [requirements.txt](https://github.com/m-shayan73/kairos/blob/reproduce/DARPA/settings/requirements.txt). For the versions of all the libraries I have used in the reproduction environments, please refer to the [libraries.txt](./libraries.txt) file in my repository.
 
 
 ## **Evaluation Metrics Mentioned In The Paper
@@ -203,24 +203,28 @@
 
             ![](./assets/theia_e5_trained_scratch_test_error.png)
 
-            The files missing in the pred_label dictionary are all those that are (manually) included in attack_list.
+            1) The files missing in the pred_label dictionary are all those that are (manually) included in attack_list.
 
-            ![](./assets/theia_e5_missing_files.png)
+                ![](./assets/theia_e5_missing_files.png)
+
+            2) Created a GitHub issue (21st Nov 2024, 15:30): [Link](https://github.com/ProvenanceAnalytics/kairos/issues/16)
 
 
 6) E5-CADETS:
 
     1) Pre-trained models:
 
-    2) My trained models:
-
+    2) My trained models: 
+    
         While running the test code, it gives the following error - some graph files (generated during the testing phase) seem to be missing:
 
         ![](./assets/cadets_e5_trained_scratch_test_error.png)
 
-        The files missing in the pred_label dictionary are all those that are (manually) included in attack_list.
+        1) The files missing in the pred_label dictionary are all those that are (manually) included in attack_list.
 
-        ![](./assets/cadets_e5_missing_files.png)
+            ![](./assets/cadets_e5_missing_files.png)
+
+        2) Created a GitHub issue (21st Nov 2024, 15:30): [Link](https://github.com/ProvenanceAnalytics/kairos/issues/16)
 
 
 7) E5-ClearScope:
