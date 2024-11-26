@@ -27,7 +27,7 @@
 6) Wherever possible I have used the libaries mentioned in the [requirements.txt](https://github.com/m-shayan73/kairos/blob/reproduce/DARPA/settings/requirements.txt). For the versions of all the libraries I have used in the reproduction environments, please refer to the [libraries.txt](./libraries.txt) file in my repository.
 
 
-## **Evaluation Metrics Mentioned In The Paper
+## **Evaluation Metrics Mentioned In The Paper**
 
 <div align="center">
 
@@ -46,6 +46,13 @@
 
 
 ## **Running and Evaluating the KAIROS:**
+
+When connecting to the postgres database, change the user and password in the code accordingly:
+
+![](./assets/postgres_connect.png)
+
+Also, change the value of *host* to *None* or the location of the file *.s.PGSQL.5432* depending on if you face the issue described in [environment-settings.md](https://github.com/m-shayan73/kairos/blob/reproduce/DARPA/settings/environment-settings.md). In my case, I set it to **None**.
+
 
 1) Manzoor et al. (Streamspot):
 
@@ -184,6 +191,8 @@
         precision=tp/(tp+fp)
         </pre>
 
+        1) Created a GitHub issue (21st Nov 2024, 16:30): [Link](https://github.com/ProvenanceAnalytics/kairos/issues/17)
+
 
 5) E5-THEIA:
 
@@ -231,15 +240,41 @@
 
     1) Pre-trained models:
 
+        Results do not match with those provided in the paper:
+
         ![](./assets/results_clearscope_e5_pretrained.png)
+
+        1) Created a GitHub issue (21st Nov 2024, 16:45): [Link](https://github.com/ProvenanceAnalytics/kairos/issues/18) 
+
+    
 
     2) My trained models:
 
+        Results do not match with those provided in the paper:
+
         ![](./assets/results_clearscope_e5_trained_scratch.png)
+
+        1) Created a GitHub issue (21st Nov 2024, 16:45): [Link](https://github.com/ProvenanceAnalytics/kairos/issues/18)
 
 
 8) OpTC:
 
-    1) Pre-trained models:
+    1) Unlike the previous datasets, it is not explicitly in the preprocessing notebook (*optc_datapreprocess.py*) which files are required.
 
-    2) My trained models:
+        1) From the given code, I am assuming we would need the logs in the "ecar" folder. 
+        
+            Specifically for training, the logs inside the "201-225" folders for dates 17-19 Sept and "401-425", "651-675", "501-525", and "51-75" folders for 20-23 Sept.
+
+            ![](./assets/optc_benign_files.png)
+            
+            For evaluation, we would need logs inside "201-225", "401-425", "651-675", "501-525", and "51-75" folders for all dates.
+
+            ![](./assets/optc_evaluation_files.png)
+
+        2) Created a GitHub issue (21st Nov 2024, 21:15): [Link](https://github.com/ProvenanceAnalytics/kairos/issues/19)
+
+    1) The groundtruth of OpTC dataset is supposed be in the *labels.csv* file, which seems to be missing in the repository.
+
+        ![](./assets/optc_labels_csv.png)
+
+        1) Created a GitHub issue (21st Nov 2024, 21:15): [Link](https://github.com/ProvenanceAnalytics/kairos/issues/19)
