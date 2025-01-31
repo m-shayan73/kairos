@@ -26,6 +26,54 @@
 
 6) Wherever possible I have used the libaries mentioned in the [requirements.txt](https://github.com/m-shayan73/kairos/blob/reproduce/DARPA/settings/requirements.txt). For the versions of all the libraries I have used in the reproduction environments, please refer to the [libraries.txt](./libraries.txt) file in my repository.
 
+7) To setup the environment we have used Anaconda 23.3.1. For installation follow the instructions [here](https://docs.anaconda.com/anaconda/install/):
+
+9) Run the following commands (inside conda) to create and run the environment required for threaTrace:
+
+    ```
+    conda create -n kairos_env python=3.9
+    conda activate kairos_env
+    ```
+    
+9) Install all the dependencies:
+
+    ```
+    conda install -y psycopg2 tqdm
+    pip install numpy==1.22.4 scikit-learn==1.2.0 networkx==2.8.7 xxhash==3.2.0 graphviz==0.20.1
+    conda install -y pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
+    pip install torch_geometric==2.0.0
+    pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-1.13.0+cu117.html
+    conda install -c conda-forge postgresql=15.3   
+    ```
+
+    Due to lack of sudo access, I used conda to install postgresSQL.
+
+10) Alternatively, we have provided a [Dockerfile](./Dockerfile) for ease.
+
+    1) Docker build:
+
+        ```
+        docker build -t kairos .
+        ```
+
+    2) Navigate to the downloaded / cloned kairos repository and run the following command to start the container with the current directory (i.e. kairos's repository) mounted (inside the workspace folder of the container)
+
+        ```
+        docker run -it -v "$(pwd)":/workspace kairos
+        ```
+
+    3) To find the current / mounted directory inside the container:
+
+        ```
+        cd workspace
+        ```
+
+8) Download the datasets from the following links:
+    [Streamspot](https://github.com/sbustreamspot/sbustreamspot-data), [DARPA Engagement 3](https://drive.google.com/open?id=1QlbUFWAGq3Hpl8wVdzOdIoZLFxkII4EK), [DARPA Engagement 5](https://drive.google.com/drive/folders/1okt4AYElyBohW4XiOBqmsvjwXsnUjLVf)
+    The files to download are mentioned in the respective preprocessing code files of each dataset.
+
+9) Follow the instructions mentioned in [kairos's readme](https://github.com/threaTrace-detector/threaTrace) to run the code.
+
 
 ## **Evaluation Metrics Mentioned In The Paper**
 
@@ -53,6 +101,7 @@ When connecting to the postgres database, change the user and password in the co
 
 Also, change the value of *host* to *None* or the location of the file *.s.PGSQL.5432* depending on if you face the issue described in [environment-settings.md](https://github.com/m-shayan73/kairos/blob/reproduce/DARPA/settings/environment-settings.md). In my case, I set it to **None**.
 
+Moreover, change the filePath / path / raw_dir variables in the preprocessing files (or config file for CADETS E3) to the path of the dataset
 
 1) Manzoor et al. (Streamspot):
 
