@@ -38,7 +38,7 @@
 9) Install all the dependencies:
 
     ```
-    conda install -y psycopg2 tqdm
+    conda install -y psycopg2 tqdm matplotlib rice
     pip install numpy==1.22.4 scikit-learn==1.2.0 networkx==2.8.7 xxhash==3.2.0 graphviz==0.20.1
     conda install -y pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
     pip install torch_geometric==2.0.0

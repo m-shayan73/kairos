@@ -23,7 +23,7 @@ ENV PATH="/anaconda/bin:$PATH"
 
 # Create a Conda environment and install required libraries
 RUN conda create -n kairos_env python=3.9 -y && \
-    conda run -n kairos_env conda install -y psycopg2 tqdm && \
+    conda run -n kairos_env conda install -y psycopg2 tqdm matplotlib rice && \
     conda run -n kairos_env pip install numpy==1.22.4 scikit-learn==1.2.0 networkx==2.8.7 xxhash==3.2.0 graphviz==0.20.1 && \
     conda run -n kairos_env conda install -y pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia && \
     conda run -n kairos_env pip install torch_geometric==2.0.0 && \
