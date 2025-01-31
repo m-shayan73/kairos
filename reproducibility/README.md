@@ -72,7 +72,7 @@
     [Streamspot](https://github.com/sbustreamspot/sbustreamspot-data), [DARPA Engagement 3](https://drive.google.com/open?id=1QlbUFWAGq3Hpl8wVdzOdIoZLFxkII4EK), [DARPA Engagement 5](https://drive.google.com/drive/folders/1okt4AYElyBohW4XiOBqmsvjwXsnUjLVf)
     The files to download are mentioned in the respective preprocessing code files of each dataset.
 
-9) Follow the instructions mentioned in [kairos's readme](https://github.com/threaTrace-detector/threaTrace) to run the code.
+9) Follow the instructions mentioned in [kairos's readme](https://github.com/threaTrace-detector/threaTrace) to run the code. Some additional details and issues have been described below in *Running and Evaluating KAIROS* section
 
 
 ## **Evaluation Metrics Mentioned In The Paper**
@@ -93,7 +93,7 @@
 </div>
 
 
-## **Running and Evaluating the KAIROS:**
+## **Running and Evaluating KAIROS:**
 
 When connecting to the postgres database, change the user and password in the code accordingly:
 
